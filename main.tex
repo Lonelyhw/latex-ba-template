@@ -9,8 +9,9 @@
 \begin{document}
 
 % --------------------------
-% Vorspann (roemische Seitenzahlen)
+% Vorspann (roemische Seitenzahlen, keine Kopfzeile)
 % --------------------------
+\pagestyle{plain}
 \pagenumbering{roman}
 \setcounter{page}{1}
 
@@ -24,10 +25,14 @@
 \addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 \listoftables
 
+\addcontentsline{toc}{chapter}{Abk\"{u}rzungsverzeichnis}
+\input{abkuerzungen}
+
 % --------------------------
-% Hauptteil (arabische Seitenzahlen ab 1)
+% Hauptteil (arabische Seitenzahlen ab 1, Kopfzeile aktiv)
 % --------------------------
 \clearpage
+\pagestyle{fancy}
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \setcounter{chapter}{0}

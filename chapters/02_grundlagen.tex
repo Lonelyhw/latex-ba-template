@@ -80,3 +80,32 @@ Lesehilfe: {++} stark ausgepr\"agt \quad {+} gut \quad {$\circ$} mittel
 
 Abbildung~\ref{fig:beispiel} zeigt einen Platzhalter. Im eigenen Dokument
 wird hier eine Grafik aus dem \texttt{figures/}-Ordner eingebunden.
+
+\section{Quellcode}
+\label{sec:quellcode}
+
+Quellcode wird mit dem \texttt{listings}-Paket eingebunden. Die Sprache
+wird per \texttt{language=}-Option gesetzt; gaengige Werte sind
+\texttt{JavaScript}, \texttt{Python}, \texttt{Java}, \texttt{SQL}.
+Abkuerzungen koennen direkt im Text mit \ac{API} oder \ac{SPA} referenziert
+werden -- beim ersten Vorkommen erscheint automatisch die Langform.
+
+Listing~\ref{lst:beispiel} zeigt eine einfache JavaScript-Funktion, die
+Daten ueber eine \ac{REST}-\ac{API} abruft.
+
+\begin{lstlisting}[language=JavaScript, caption={Asynchroner API-Abruf in JavaScript}, label=lst:beispiel]
+async function ladeDaten(url) {
+  const antwort = await fetch(url);
+
+  if (!antwort.ok) {
+    throw new Error(`HTTP-Fehler: ${antwort.status}`);
+  }
+
+  return antwort.json();
+}
+
+// Aufruf
+ladeDaten('https://api.beispiel.de/daten')
+  .then(daten => console.log(daten))
+  .catch(fehler => console.error(fehler));
+\end{lstlisting}

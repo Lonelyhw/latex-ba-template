@@ -10,16 +10,48 @@
 % --- Seitenformat ---
 \usepackage[a4paper,margin=2.5cm]{geometry}  % A4, 2,5 cm Rand rundum
 
+% --- Zeilenabstand ---
+\usepackage{setspace}
+\onehalfspacing                % 1,5-facher Zeilenabstand (Nordakademie-Vorgabe)
+
+% --- Kopf- und Fusszeilen ---
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\fancyhf{}
+\fancyhead[R]{\small\nouppercase{\leftmark}}  % Kapitelname oben rechts
+\fancyfoot[C]{\thepage}                        % Seitenzahl unten mittig
+\renewcommand{\headrulewidth}{0.4pt}
+
 % --- Grafiken & Tabellen ---
 \usepackage{graphicx}   % Bilder einbinden (\includegraphics)
 \usepackage{pdfpages}   % PDF-Seiten einbinden (\includepdf) -- fuer Anhang
 \usepackage{booktabs}   % Professionelle Tabellen (\toprule, \midrule, \bottomrule)
 \usepackage{longtable}  % Tabellen ueber mehrere Seiten
 
+% --- Quellcode ---
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  keywordstyle=\bfseries\color{blue!70!black},
+  commentstyle=\itshape\color{gray},
+  stringstyle=\color{green!50!black},
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  captionpos=b,
+  tabsize=2,
+  showstringspaces=false,
+  % Umlaute in Listings:
+  literate={ü}{{\"{u}}}1 {ö}{{\"{o}}}1 {ä}{{\"{a}}}1
+           {Ü}{{\"{U}}}1 {Ö}{{\"{O}}}1 {Ä}{{\"{A}}}1 {ß}{{\ss{}}}1
+}
+
 % --- Sonstiges ---
 \usepackage{csquotes}   % Korrekte Anfuehrungszeichen (benoetigt von biblatex)
-\usepackage{xcolor}     % Farben (z.B. fuer Links)
+\usepackage{xcolor}     % Farben (z.B. fuer Links und Listings)
 \usepackage{amssymb}    % Mathematische Symbole (\square fuer Checkboxen im Fragebogen)
+\usepackage{acronym}    % Abkuerzungsverzeichnis (\ac{}, \acl{}, \acs{})
 
 % --- Hyperlinks & PDF-Metadaten ---
 \usepackage{hyperref}
