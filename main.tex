@@ -1,0 +1,54 @@
+% main.tex
+% Hauptdatei der Bachelorarbeit.
+% Hier wird alles zusammengefuehrt -- eigentlich kein Inhalt hier direkt schreiben.
+
+\documentclass[12pt,a4paper]{report}
+
+\input{preamble}  % Pakete und Konfiguration laden
+
+\begin{document}
+
+% --------------------------
+% Vorspann (roemische Seitenzahlen)
+% --------------------------
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\input{chapters/00_frontmatter}  % Titelseite, Sperrvermerk, Eidesstattliche Erklaerung
+
+\tableofcontents
+
+% Abbildungsverzeichnis (auskommentieren falls gewuenscht):
+% \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+% \listoffigures
+
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\listoftables
+
+% --------------------------
+% Hauptteil (arabische Seitenzahlen ab 1)
+% --------------------------
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\setcounter{chapter}{0}
+
+\input{chapters/01_einleitung}
+\input{chapters/02_grundlagen}
+% Weitere Kapitel hier einfuegen:
+% \input{chapters/03_methodik}
+% \input{chapters/04_ergebnisse}
+% \input{chapters/05_fazit}
+
+% --------------------------
+% Literaturverzeichnis
+% --------------------------
+\clearpage
+\printbibliography
+
+% --------------------------
+% Anhang (optional)
+% --------------------------
+% \input{anhang}
+
+\end{document}

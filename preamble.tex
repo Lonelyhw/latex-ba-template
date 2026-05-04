@@ -1,0 +1,53 @@
+% preamble.tex
+% Hier werden alle LaTeX-Pakete geladen und konfiguriert.
+% Diese Datei wird in main.tex mit \input{preamble} eingebunden.
+
+% --- Schrift & Encoding ---
+\usepackage[T1]{fontenc}       % Korrekte Silbentrennung und Sonderzeichen
+\usepackage[utf8]{inputenc}    % UTF-8 Eingabe (Umlaute direkt schreiben)
+\usepackage[ngerman]{babel}    % Deutsche Spracheinstellungen
+
+% --- Seitenformat ---
+\usepackage[a4paper,margin=2.5cm]{geometry}  % A4, 2,5 cm Rand rundum
+
+% --- Grafiken & Tabellen ---
+\usepackage{graphicx}   % Bilder einbinden (\includegraphics)
+\usepackage{pdfpages}   % PDF-Seiten einbinden (\includepdf) -- fuer Anhang
+\usepackage{booktabs}   % Professionelle Tabellen (\toprule, \midrule, \bottomrule)
+\usepackage{longtable}  % Tabellen ueber mehrere Seiten
+
+% --- Sonstiges ---
+\usepackage{csquotes}   % Korrekte Anfuehrungszeichen (benoetigt von biblatex)
+\usepackage{xcolor}     % Farben (z.B. fuer Links)
+
+% --- Hyperlinks & PDF-Metadaten ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,    % Interne Links (Inhaltsverzeichnis etc.)
+  citecolor=blue,    % Zitierlinks
+  urlcolor=blue,     % URLs
+  % !! Bitte anpassen !!
+  pdftitle={Bachelorarbeit -- Titel der Arbeit},
+  pdfauthor={Vorname Nachname},
+  pdfsubject={Bachelorarbeit},
+  pdfkeywords={Bachelorarbeit, Stichwort1, Stichwort2}
+}
+
+% --- Literaturverzeichnis ---
+% biblatex mit biber als Backend, Autor-Jahr-Stil, Zitate als Fussnoten
+\usepackage[
+  backend=biber,        % Biber statt BibTeX (moderner, Umlaute-sicher)
+  style=authoryear,     % Autor-Jahr-Zitierweise
+  autocite=footnote,    % \autocite{} erzeugt automatisch Fussnoten
+  isbn=false,           % ISBN nicht anzeigen
+  doi=false,            % DOI nicht anzeigen
+  url=true,             % URLs anzeigen
+  giveninits=true,      % Vornamen abkuerzen (z.B. "M. Fowler")
+  uniquename=init,
+  maxcitenames=2,       % Im Text max. 2 Autoren, dann "u. a."
+  maxbibnames=99,       % Im Literaturverzeichnis alle Autoren
+  ibidtracker=false,
+  pagetracker=false
+]{biblatex}
+\addbibresource{references.bib}  % Literatur-Datei einbinden

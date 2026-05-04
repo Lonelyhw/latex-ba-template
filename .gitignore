@@ -1,0 +1,21 @@
+# LaTeX Hilfsdateien
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.fdb_latexmk
+*.fls
+
+# Ausgabe (kompilierte PDF nicht einchecken)
+main.pdf
+
+# Editor-spezifisch
+.vscode/
+*.swp

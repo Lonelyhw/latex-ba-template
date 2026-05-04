@@ -1,0 +1,49 @@
+% chapters/02_grundlagen.tex
+% Zweites Kapitel: Theoretische Grundlagen
+% Dieses Kapitel zeigt, wie Zitate, Tabellen und Labels funktionieren.
+
+\chapter{Theoretische Grundlagen}
+\label{chap:grundlagen}
+
+Hier steht der einleitende Text des Kapitels \autocite{beispiel_buch_2020}.
+Fuer mehrere Quellen gleichzeitig: \autocite{beispiel_artikel_2019, beispiel_online_2024}.
+
+\section{Erster Abschnitt}
+\label{sec:abschnitt1}
+
+Text des ersten Abschnitts. Ein Zitat im Fliestext: Laut
+\textcite{beispiel_buch_2020} gilt \ldots
+
+Mit Seitenangabe: \autocite[S.~42]{beispiel_buch_2020}.
+
+\section{Tabellen}
+\label{sec:tabellen}
+
+Tabelle~\ref{tab:beispiel} zeigt ein Beispiel fuer eine professionell
+formatierte Tabelle mit dem \texttt{booktabs}-Paket.
+
+\begin{table}[h]
+\centering
+\caption{Beispieltabelle}
+\label{tab:beispiel}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Kriterium} & \textbf{Option A} & \textbf{Option B} \\
+\midrule
+Merkmal 1 & Gut    & Mittel \\
+Merkmal 2 & Mittel & Gut    \\
+Merkmal 3 & Gut    & Gut    \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Abbildungen}
+\label{sec:abbildungen}
+
+% Abbildung einbinden (Datei im figures/-Ordner ablegen):
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figures/mein-bild.png}
+%   \caption{Beschreibung der Abbildung}
+%   \label{fig:mein-bild}
+% \end{figure}
