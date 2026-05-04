@@ -19,22 +19,51 @@ Mit Seitenangabe: \autocite[S.~42]{beispiel_buch_2020}.
 \section{Tabellen}
 \label{sec:tabellen}
 
-Tabelle~\ref{tab:beispiel} zeigt ein Beispiel fuer eine professionell
-formatierte Tabelle mit dem \texttt{booktabs}-Paket.
+Tabelle~\ref{tab:stichprobe} zeigt eine einfache Ergebnistabelle mit
+deutschen Dezimalzahlen (\texttt{\{,\}}) und Prozentwerten (\texttt{\textbackslash,\textbackslash\%}).
+Der Stichprobenumfang wird mit \texttt{n\textbackslash,=\textbackslash,16} korrekt gesetzt.
 
 \begin{table}[h]
 \centering
-\caption{Beispieltabelle}
-\label{tab:beispiel}
+\caption{Verteilung und Kenntnisstand in der Stichprobe (n\,=\,16)}
+\label{tab:stichprobe}
 \begin{tabular}{lcc}
 \toprule
-\textbf{Kriterium} & \textbf{Option A} & \textbf{Option B} \\
+\textbf{Kategorie} & \textbf{Anteil} & \textbf{\O{} Kenntnisstand (1--5)} \\
 \midrule
-Merkmal 1 & Gut    & Mittel \\
-Merkmal 2 & Mittel & Gut    \\
-Merkmal 3 & Gut    & Gut    \\
+Gruppe A & 14 (87{,}5\,\%) & 3{,}87 \\
+Gruppe B &  2 (12{,}5\,\%) & 2{,}70 \\
+Gruppe C &  0 ~(0{,}0\,\%) & 2{,}13 \\
 \bottomrule
 \end{tabular}
+\end{table}
+
+Tabelle~\ref{tab:bewertungsmatrix} zeigt eine Bewertungsmatrix -- ein
+haeufig genutztes Muster fuer Vergleichskapitel. Die Legende wird als
+\texttt{\textbackslash footnotesize}-Block direkt unter die Tabelle gesetzt.
+
+\begin{table}[h]
+\centering
+\caption{Bewertungsmatrix der Optionen im Vergleich}
+\label{tab:bewertungsmatrix}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Kriterium}    & \textbf{Option A} & \textbf{Option B} & \textbf{Option C} \\
+\midrule
+Wartbarkeit           & {++} & {+}           & {+}           \\
+Skalierbarkeit        & {++} & {+}           & {$\circ$}     \\
+Lernkurve             & {-}  & {+}           & {++}          \\
+Teamfaehigkeit        & {++} & {+}           & {$\circ$}     \\
+Marktpraesenz         & {+}  & {++}          & {+}           \\
+Erfahrungsbasis       & {++} & {$\circ$}     & {--}          \\
+\bottomrule
+\end{tabular}
+\smallskip
+
+\raggedright
+\footnotesize
+Lesehilfe: {++} stark ausgepr\"agt \quad {+} gut \quad {$\circ$} mittel
+\quad {-} schwach \quad {--} kaum vorhanden.
 \end{table}
 
 \section{Abbildungen}
